@@ -167,6 +167,35 @@ mkrwifi1010.build.pid=0x8054
 mkrwifi1010.bootloader.tool=openocd
 mkrwifi1010.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
 
+# Arduino MKR WiFi 1010 (Coexistance)
+# --------------------
+mkrwifi1010_coex.name=Arduino MKR WiFi 1010 (Coexistance)
+mkrwifi1010_coex.vid.0=0x2341
+mkrwifi1010_coex.pid.0=0x8054
+mkrwifi1010_coex.vid.1=0x2341
+mkrwifi1010_coex.pid.1=0x0054
+
+mkrwifi1010_coex.upload.tool=bossac
+mkrwifi1010_coex.upload.protocol=sam-ba
+mkrwifi1010_coex.upload.maximum_size=262144
+mkrwifi1010_coex.upload.use_1200bps_touch=true
+mkrwifi1010_coex.upload.wait_for_upload_port=true
+mkrwifi1010_coex.upload.native_usb=true
+mkrwifi1010_coex.build.mcu=cortex-m0plus
+mkrwifi1010_coex.build.f_cpu=48000000L
+mkrwifi1010_coex.build.usb_product="Arduino MKR WiFi 1010"
+mkrwifi1010_coex.build.usb_manufacturer="Arduino LLC"
+mkrwifi1010_coex.build.board=SAMD_MKRWIFI1010
+mkrwifi1010_coex.build.core=arduino
+mkrwifi1010_coex.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags} -DUSE_BQ24195L_PMIC -DCOEXISTENCE
+mkrwifi1010_coex.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+mkrwifi1010_coex.build.openocdscript=openocd_scripts/arduino_zero.cfg
+mkrwifi1010_coex.build.variant=mkrwifi1010_coex
+mkrwifi1010_coex.build.vid=0x2341
+mkrwifi1010_coex.build.pid=0x8054
+mkrwifi1010_coex.bootloader.tool=openocd
+mkrwifi1010_coex.bootloader.file=mkrwifi1010/samd21_sam_ba_arduino_mkrwifi1010.bin
+
 # Arduino NANO 33 IoT
 # --------------------
 nano_33_iot.name=Arduino NANO 33 IoT
@@ -195,6 +224,35 @@ nano_33_iot.build.vid=0x2341
 nano_33_iot.build.pid=0x8057
 nano_33_iot.bootloader.tool=openocd
 nano_33_iot.bootloader.file=nano_33_iot/samd21_sam_ba_arduino_nano_33_iot.bin
+
+# Arduino NANO 33 IoT (Coexistance)
+# --------------------
+nano_33_iot_coex.name=Arduino NANO 33 IoT (Coexistance)
+nano_33_iot_coex.vid.0=0x2341
+nano_33_iot_coex.pid.0=0x8057
+nano_33_iot_coex.vid.1=0x2341
+nano_33_iot_coex.pid.1=0x0057
+
+nano_33_iot_coex.upload.tool=bossac
+nano_33_iot_coex.upload.protocol=sam-ba
+nano_33_iot_coex.upload.maximum_size=262144
+nano_33_iot_coex.upload.use_1200bps_touch=true
+nano_33_iot_coex.upload.wait_for_upload_port=true
+nano_33_iot_coex.upload.native_usb=true
+nano_33_iot_coex.build.mcu=cortex-m0plus
+nano_33_iot_coex.build.f_cpu=48000000L
+nano_33_iot_coex.build.usb_product="Arduino NANO 33 IoT"
+nano_33_iot_coex.build.usb_manufacturer="Arduino LLC"
+nano_33_iot_coex.build.board=SAMD_NANO_33_IOT
+nano_33_iot_coex.build.core=arduino
+nano_33_iot_coex.build.extra_flags=-DCRYSTALLESS -D__SAMD21G18A__ {build.usb_flags} -DCOEXISTENCE
+nano_33_iot_coex.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+nano_33_iot_coex.build.openocdscript=openocd_scripts/arduino_zero.cfg
+nano_33_iot_coex.build.variant=nano_33_iot_coex
+nano_33_iot_coex.build.vid=0x2341
+nano_33_iot_coex.build.pid=0x8057
+nano_33_iot_coex.bootloader.tool=openocd
+nano_33_iot_coex.bootloader.file=nano_33_iot/samd21_sam_ba_arduino_nano_33_iot.bin
 
 # Arduino MKR FOX 1200
 # --------------------
